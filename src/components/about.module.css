@@ -28,5 +28,5 @@
     display: flex;
     gap: 20px;
     position: fixed;
-    bottom: 50px;
+    bottom: 0px;
 }
