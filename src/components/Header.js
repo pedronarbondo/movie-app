@@ -6,10 +6,10 @@ export default function Header() {
   return (
     <div className={classes.header}>
       <div className={classes.headerLeft}>
-        <Link className={classes.links} to="/">
+        <Link className={classes.links} to="/movie-app">
           <p className={classes.title}>MOVIE APP</p>
         </Link>
-        <Link className={classes.links} to="/about">
+        <Link className={classes.links} to="/movie-app/about">
           <p>About</p>
         </Link>
       </div>
