@@ -15,9 +15,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Site />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/:id" element={<MovieDetails />} />
+          <Route path="/movie-app" element={<Site />} />
+          <Route path="/movie-app/about" element={<About />} />
+          <Route path="/movie-app/:id" element={<MovieDetails />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
