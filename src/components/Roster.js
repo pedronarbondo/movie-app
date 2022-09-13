@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
 import MovieBox from "./MovieBox";
 import classes from "./roster.module.css";
 
@@ -19,25 +18,14 @@ export default function Roster() {
     return data;
   };
 
-  const {
-    isLoading,
-    status,
-    data,
-    error,
-    isFetching,
-    isFetchingNextPage,
-    isFetchingPreviousPage,
-    fetchNextPage,
-    fetchPreviousPage,
-    hasNextPage,
-    hasPreviousPage,
-  } = useInfiniteQuery("movieRoster", getMovieRoster, {
-    getNextPageParam: (lastPage, allPages) => {
-      const maxPages = 35082;
-      const nextPage = allPages.length + 1;
-      return nextPage <= maxPages ? nextPage : undefined;
-    },
-  });
+  const { isLoading, data, error, fetchNextPage, hasNextPage } =
+    useInfiniteQuery("movieRoster", getMovieRoster, {
+      getNextPageParam: (lastPage, allPages) => {
+        const maxPages = 35082;
+        const nextPage = allPages.length + 1;
+        return nextPage <= maxPages ? nextPage : undefined;
+      },
+    });
 
   useEffect(() => {
     const onScroll = async (event) => {
@@ -68,6 +56,7 @@ export default function Roster() {
                 <MovieBox
                   key={movie.poster_path}
                   image={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+                  id={movie.id}
                 />
               );
             })
