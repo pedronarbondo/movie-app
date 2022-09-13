@@ -1,0 +1,10 @@
+.rosterHolder {
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;      
+}
+
+.mainContainer {
+    margin: 15px auto;
+    width: 90%;
+}

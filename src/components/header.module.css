@@ -1,0 +1,21 @@
+.header {
+    color: white;
+    display: flex;    
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80px;
+    position: fixed;
+    z-index: 200;
+    background-color: #222;
+    width: 100%;
+}
+
+.headerLeft {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem;
+}

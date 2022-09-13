@@ -1,0 +1,17 @@
+.container {
+    margin: 20px
+}
+
+.box {
+    width: 200px;
+    height: 300px;
+    transition: 0.3s ease-in-out
+}
+
+img {
+    height: 100%;    
+}
+
+.box:hover {   
+    transform: scale(1.1)
+}
