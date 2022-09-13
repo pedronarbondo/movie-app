@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./movieCarousel.module.css";
+import classes from "./movieCarousel.module.css";
 
 export default function MovieCarousel(props) {
   const { data } = props;
@@ -18,6 +19,7 @@ export default function MovieCarousel(props) {
             title: movie.title,
             rating: `${movie.vote_average} / 10`,
             image: `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`,
+            overview: movie.overview,
           },
         ];
       });
@@ -37,8 +39,8 @@ export default function MovieCarousel(props) {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>{carouselData[0]?.title}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className={classes.title}>{carouselData[0]?.title}</h3>
+          <p className={classes.overview}>{carouselData[0]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -49,8 +51,8 @@ export default function MovieCarousel(props) {
         />
 
         <Carousel.Caption>
-          <h3>{carouselData[1]?.title}</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3 className={classes.title}>{carouselData[1]?.title}</h3>
+          <p className={classes.overview}>{carouselData[1]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -61,10 +63,8 @@ export default function MovieCarousel(props) {
         />
 
         <Carousel.Caption>
-          <h3>{carouselData[2]?.title}</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3 className={classes.title}>{carouselData[2]?.title}</h3>
+          <p className={classes.overview}>{carouselData[2]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -74,8 +74,8 @@ export default function MovieCarousel(props) {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>{carouselData[3]?.title}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className={classes.title}>{carouselData[3]?.title}</h3>
+          <p className={classes.overview}>{carouselData[3]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -85,8 +85,8 @@ export default function MovieCarousel(props) {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>{carouselData[4]?.title}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className={classes.title}>{carouselData[4]?.title}</h3>
+          <p className={classes.overview}>{carouselData[4]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -96,8 +96,8 @@ export default function MovieCarousel(props) {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>{carouselData[5]?.title}</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3 className={classes.title}>{carouselData[5]?.title}</h3>
+          <p className={classes.overview}>{carouselData[5]?.overview}</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

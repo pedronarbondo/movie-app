@@ -1,4 +1,5 @@
 import classes from "./app.modules.css";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Site from "./components/Site";
 
@@ -7,7 +8,11 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Site />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Site />} />
+        </Routes>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }

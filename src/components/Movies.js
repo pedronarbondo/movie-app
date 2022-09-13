@@ -13,7 +13,6 @@ export default function Movies() {
     const data = await movieData.json();
     return data;
   };
-
   const { status, isLoading, data } = useQuery(
     "popularMovieData",
     getMovieData
